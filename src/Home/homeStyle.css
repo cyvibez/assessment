@@ -1,0 +1,63 @@
+.home {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(60deg, black, #082322, black);
+}
+
+/* Header  */
+
+.home .homeText {
+    display: block;
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 25px;
+}
+.home .homeText a {
+    text-decoration: none;
+    color: #34a6a2;
+    letter-spacing: 2px;
+    font-size: 2em;
+    font-weight: bold;
+}
+.home .homeText a:hover {
+    color: #28584c;
+}
+
+.home .homeText .line {
+    display: block;
+    background-color: #34a6a2;
+    width: 100%;
+    height: 2px;
+    z-index: 1;
+    margin-top: 3px;
+}
+
+/* pagination  */
+
+.home .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.home .pagination button {
+    background-color: transparent;
+    padding: 5px 10px;
+    font-size: 10px;
+    color: white;
+    border: 2px solid #34a6a2;
+    border-radius: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.home .pagination button:disabled {
+    opacity: 50%;
+    /* cursor: none; */
+}
+
+.home .pagination p {
+    color: white;
+    font-size: 12px;
+}
+
