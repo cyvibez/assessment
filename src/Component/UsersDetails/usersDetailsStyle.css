@@ -8,7 +8,7 @@
 
 .details .detailsText {
     display: block;
-    max-width: 1000px;
+    max-width: 900px;
     margin: auto;
     padding-top: 25px;
 }
@@ -32,11 +32,14 @@
     margin-top: 3px;
 }
 
+
+/* loader gif  */
+
 .details img {
     width: 80px;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 40%;
+    left: 40%;
 }
 
 /* Info  1*/
@@ -47,7 +50,7 @@
     background-color: #031113;
     border-radius: 15px;
     padding: 10px 20px;
-    margin: 40px auto 20px;
+    margin: 80px auto 20px;
     text-align: center;
 }
 
@@ -206,3 +209,114 @@
 }
 
 
+@media (max-width: 900px) {
+    /* header  */
+
+    .details .detailsText{
+        max-width: 700px;
+    }
+
+    .detailsText a {
+        font-size: 1.8em;
+    }
+  
+}
+
+@media (max-width: 720px) {
+    /* header  */
+
+    .details .detailsText {
+        max-width: 600px;
+    }
+  
+}
+
+@media (max-width: 612px) {
+    /* header  */
+
+    .details .detailsText {
+        max-width: 500px;
+    }
+  
+}
+
+@media (max-width: 510px) {
+    /* header  */
+
+    .details .detailsText {
+        max-width: 400px;
+    }
+
+    .details .detailsText a {
+        font-size: 1.5em;
+    }
+  
+    /* info 1 */
+
+    .details .detailInfo {
+        max-width: 350px;
+        padding: 10px 20px;
+    }
+
+    /* info 2  */
+
+    .details .detailInfo_two {
+        max-width: 350px;
+        padding: 20px;
+    }
+
+}
+
+@media (max-width: 415px) {
+    /* header  */
+
+    .details .detailsText {
+        max-width: 350px;
+    }
+
+     /* info 1 */
+
+     .details .detailInfo {
+        max-width: 300px;
+        padding: 10px 20px;
+    }
+
+    /* info 2  */
+
+    .details .detailInfo_two {
+        max-width: 300px;
+        padding: 20px;
+    }
+    
+
+
+}
+
+@media (max-width: 365px) {
+    /* header  */
+
+    .details .detailsText{
+        max-width: 305px;
+    }
+
+      /* info 1 */
+
+      .details .detailInfo {
+        max-width: 250px;
+    }
+
+    /* info 2  */
+
+    .details .detailInfo_two {
+        max-width: 250px;
+    }
+
+    .details .detailInfo_two .address_geo .address{
+        display: block;
+     }
+
+     .details .detailInfo_two .tel_website {
+        display: block;
+    }
+
+}
