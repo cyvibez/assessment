@@ -39,7 +39,7 @@
     width: 80px;
     position: absolute;
     top: 40%;
-    left: 40%;
+    left: 47%;
 }
 
 /* Info  1*/
@@ -196,7 +196,7 @@
     color: white;
     border: 2px solid #34a6a2;
     border-radius: 10px;
-    margin: 0 5px;
+    margin: 0 20px;
     cursor: pointer;
 }
 

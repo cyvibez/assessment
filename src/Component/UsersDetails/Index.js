@@ -6,6 +6,8 @@ import { FaRegCircleUser, FaPhone, FaGlobe, FaLocationDot } from "react-icons/fa
 import Loading  from '../Gif/loader.gif'
 import { AiOutlineProfile } from "react-icons/ai";
 import { HiOutlineOfficeBuilding } from "react-icons/hi";
+import { motion } from 'framer-motion';
+
 
 
 const Details = () => {
@@ -39,18 +41,25 @@ const Details = () => {
     return (
         <div className="details">
 
-            <div className="detailsText">
+            <motion.div className="detailsText"
+                initial={{ y: -100 }}
+                animate={{ y: -5 }}
+                transition={{ delay: 0.2, type: 'spring', stiffness: 120 }}
+            >
                 <a href='/'>Client Info</a>
                 <div className="line"></div>
-           </div>
+           </motion.div>
 
                  {/* User Details */}
 
             { isPending ? <img src={Loading} alt="Load GIF" /> :
             <div>
 
-                <div className="detailInfo">
-
+                <motion.div className="detailInfo"
+                   initial={{ opacity: 0 }}
+                   animate={{ opacity: 1 }}
+                   transition={{ delay: 1, duration: 1.5 }}
+                >
                     <div className="profile">
                         <div className="profileText">
                             <h4>{user?.username}</h4>
@@ -60,10 +69,13 @@ const Details = () => {
                             <FaRegCircleUser />
                         </div>
                     </div>
-                
-                </div>
+                </motion.div>
 
-                <div className="detailInfo_two">
+                <motion.div className="detailInfo_two"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1, duration: 1.5 }}
+                >
 
                     <div className="name">
                         <span><AiOutlineProfile /></span>
@@ -104,17 +116,24 @@ const Details = () => {
                         <p>{user.company.bs}</p>
                    </div>
 
-                </div>
+                </motion.div>
 
                 {/* User Data Navigation  */}
 
                 <div className="pagination">
-                    <button onClick={() => setCurrentId(currentId => Math.max(currentIdDetails - 1, 1))}
+                    <motion.button onClick={() => setCurrentId(currentId => Math.max(currentIdDetails - 1, 1))}
                     disabled = {currentId === 1}
-                    >Prev</button>
-                    <button onClick={() => setCurrentId(currentId => currentIdDetails + 1)}
+                    initial={{ x: '-30vw' }}
+                    animate={{ x: 0 }}
+                    transition={{ delay: 0.2, type: 'spring', stiffness: 50 }}
+                    >Prev</motion.button>
+
+                    <motion.button onClick={() => setCurrentId(currentId => currentIdDetails + 1)}
                     disabled= {currentId === 10}
-                    >Next</button>
+                    initial={{ x: '30vw' }}
+                    animate={{ x: 0 }}
+                    transition={{ delay: 0.2, type: 'spring', stiffness: 50 }}
+                    >Next</motion.button>
                 </div>
 
             </div>
