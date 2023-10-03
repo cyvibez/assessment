@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-// import { NavLink } from 'react-router-dom';
 
 import './homeStyle.css'
 import Users from '../Component/AllUsers/Index';
+import Loading from '../Component/Gif/loader.gif'
 
 
 
@@ -12,10 +12,16 @@ const Home = () => {
 
     const [users, setUsers] = useState([])
 
+    const [isPending, setIsPending] = useState(true)
+
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(res => res.json())
-        .then(data => setUsers(data))
+           .then(data => {
+            setUsers(data);
+            setIsPending(false);
+        })
+        .catch(err => console.log(err))
     }, [])
 
 
@@ -30,32 +36,36 @@ const Home = () => {
     const currentUsers = (users.slice(FirsInfoIndex, LastInfoIndex))
 
     const nthPage = Math.ceil(users.length / infoPerPage)
-    // console.log(currentPage);
-
-    
-
 
 
     return (
         <div className="home">  
 
-            <div className="homeText">
+           <div className="homeText">
                 <a href='/'>Client Info</a>
                 <div className="line"></div>
-            </div>
+           </div>
 
-           <Users currentUsers={currentUsers}/>
+            { isPending ? <img src={Loading} alt="Load GIF" /> :
+            
+            <div >
+                <Users currentUsers={currentUsers}/>
         
-            <div className="pagination">
-                <button onClick={() => SetCurrentPage(currentPage => Math.max(currentPage - 1, 1))}
-                disabled = {currentPage === 1}
-                >Prev</button>
-                <p>{currentPage}</p>
-                <button onClick={() => SetCurrentPage(currentPage => currentPage + 1)}
-                disabled= {currentPage === nthPage}
-                >Next</button>
+                 {/* pagination */}
+
+                <div className="pagination">
+                    <button onClick={() => SetCurrentPage(currentPage => Math.max(currentPage - 1, 1))}
+                    disabled = {currentPage === 1}
+                    >Prev</button>
+                    <p>{currentPage}</p>
+                    <button onClick={() => SetCurrentPage(currentPage => currentPage + 1)}
+                    disabled= {currentPage === nthPage}
+                    >Next</button>
+                </div>
 
             </div>
+
+            }
            
 
         </div>

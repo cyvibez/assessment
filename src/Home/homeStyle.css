@@ -2,9 +2,10 @@
     width: 100%;
     height: 100vh;
     background-image: linear-gradient(60deg, black, #082322, black);
+    position: relative;
 }
 
-/* Header  */
+/* header  */
 
 .home .homeText {
     display: block;
@@ -32,6 +33,15 @@
     margin-top: 3px;
 }
 
+/* Loading GIF  */
+
+.home img {
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
 /* pagination  */
 
 .home .pagination {
@@ -53,11 +63,15 @@
 
 .home .pagination button:disabled {
     opacity: 50%;
-    /* cursor: none; */
+}
+
+.home .pagination button:hover {
+    scale: 1.1;
 }
 
 .home .pagination p {
     color: white;
     font-size: 12px;
 }
+
 
